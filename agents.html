@@ -1,0 +1,95 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agents</title>
+    <link rel="stylesheet" href="styleagents.css">
+</head>
+<body>
+    
+    <div id="hero">
+    <div class="navbar">
+        <a href="index.html">
+        <img src="images/logo.png" class="logo">
+        </a>
+        <div class="user">
+            <a href="form.html">
+            <button type="button">Register</button>
+            </a>
+           
+        <div class="user">
+            <a href="aboutus.html">
+            <button type="button">About us</button>
+            </a>
+            </div>
+            <div class="user">
+            <button type="button">Maps</button>
+            </div>
+            <div class="user">
+            <button type="button">Agents</button>
+            </div>
+           
+        </div>
+        </div>
+        
+        
+       <div class="container">
+            <div class="info">
+                <h1>Agents</h1>
+                <p>The best of all agents, in High Definition<br>Contact us for more amazing content</p>
+               
+            
+            </div>
+        </div>
+        
+        
+        <div class="slider">
+            <img src="images/left-arrow.png" id="prev">
+            <div class="preview">
+                <img src="agents/jett1.jpg" class="active thumbnail">
+                <img src="agents/omen2.png" class="thumbnail">
+                <img src="agents/reyna3.png" class="thumbnail">
+                <img src="agents/sage4.png" class="thumbnail">
+                <img src="agents/sova5.jpg" class="thumbnail">
+                </div>
+            <img src="images/right-arrow.png" id="next">
+        </div>
+        
+    </div>
+    
+    <script>
+    var prev = document.getElementById("prev");
+    var next = document.getElementById("next");
+    var thumbnail = document.getElementsByClassName("thumbnail");
+    var hero = document.getElementById("hero");
+        
+    var backgroundImg = new Array(
+        "agents/jett.jpg",
+        "agents/omen.png",
+        "agents/reyna.png",
+        "agents/sage.png",
+        "agents/sova.jpg",
+    );
+    let i = 0;
+    next.onclick = function(){
+        
+        if(i < 4)
+        hero.style.backgroundImage = 'url("'+backgroundImg[i+1]+'")';
+        thumbnail[i+1].classList.add("active");
+        thumbnail[i].classList.remove("active");
+        i++;
+    }
+    
+    prev.onclick = function(){
+        
+        if(i > 0)
+        hero.style.backgroundImage = 'url("'+backgroundImg[i-1]+'")';
+        thumbnail[i-1].classList.add("active");
+        thumbnail[i].classList.remove("active");
+        i--;
+    }
+    
+    
+    </script>
+    
+</body>
+</html>

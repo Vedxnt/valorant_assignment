@@ -1,0 +1,99 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps</title>
+    <link rel="stylesheet" href="stylemaps.css">
+</head>
+<body>
+    
+    <div id="hero">
+    <div class="navbar">
+        <a href="index.html">
+        <img src="images/logo.png" class="logo">
+        </a>
+        <div class="user">
+            <a href="form.html">
+            <button type="button">Register</button>
+            </a>
+           
+        <div class="user">
+            <a href="aboutus.html">
+            <button type="button">About us</button>
+            </a>
+            </div>
+            <div class="user">
+                <a href="maps.html">
+            <button type="button">Maps</button>
+                </a>
+            </div>
+            <div class="user">
+                <a href="agents.html">
+            <button type="button">Agents</button>
+                </a>
+            </div>
+           
+        </div>
+        </div>
+        
+        
+       <div class="container">
+            <div class="info">
+                <h1>Maps</h1>
+                <p>Bringing you all the maps for your understanding<br>Contact us for more amazing content</p>
+               
+            
+            </div>
+        </div>
+        
+        
+        <div class="slider">
+            <img src="images/left-arrow.png" id="prev">
+            <div class="preview">
+                <img src="maps/small1.png" class="active thumbnail">
+                <img src="maps/small2.png" class="thumbnail">
+                <img src="maps/small3.jpg" class="thumbnail">
+                <img src="maps/small4.jpg" class="thumbnail">
+                <img src="maps/small5.jpg" class="thumbnail">
+                </div>
+            <img src="images/right-arrow.png" id="next">
+        </div>
+        
+    </div>
+    
+    <script>
+    var prev = document.getElementById("prev");
+    var next = document.getElementById("next");
+    var thumbnail = document.getElementsByClassName("thumbnail");
+    var hero = document.getElementById("hero");
+        
+    var backgroundImg = new Array(
+        "maps/map1bind.png",
+        "maps/map2split.png",
+        "maps/map3icebox.jpg",
+        "maps/map4haven.jpg",
+        "maps/map5ascent.jpg",
+    );
+    let i = 0;
+    next.onclick = function(){
+        
+        if(i < 4)
+        hero.style.backgroundImage = 'url("'+backgroundImg[i+1]+'")';
+        thumbnail[i+1].classList.add("active");
+        thumbnail[i].classList.remove("active");
+        i++;
+    }
+    
+    prev.onclick = function(){
+        
+        if(i > 0)
+        hero.style.backgroundImage = 'url("'+backgroundImg[i-1]+'")';
+        thumbnail[i-1].classList.add("active");
+        thumbnail[i].classList.remove("active");
+        i--;
+    }
+    
+    
+    </script>
+    
+</body>
+</html>

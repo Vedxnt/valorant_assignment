@@ -1,0 +1,97 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valorant Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="hero">
+    <div class="navbar">
+        <img src="images/logo.png" class="logo">
+        <div class="user">
+            <a href="form.html">
+            <button type="button">Register</button>
+            </a>
+           
+        <div class="user">
+            <a href="aboutus.html">
+            <button type="button">About us</button>
+            </a>
+            </div>
+            <div class="user">
+                <a href="maps.html">
+            <button type="button">Maps</button>
+                </a>
+            </div>
+            <div class="user">
+                <a href="agents.html">
+            <button type="button">Agents</button>
+                </a>
+            </div>
+             <a href="index.html">
+            <img src="images/userimg.jpg" class="logo">
+            </a>
+        </div>
+        </div>
+        
+        <div class="container">
+            <div class="info">
+                <h1>WELCOME</h1>
+                <p>Everything cool you want to see about Valorant, you'll find here <br>Contact us for more amazing content</p>
+                <input type="text" placeholder="Search">
+            
+            </div>
+        </div>
+        
+        <div class="slider">
+            <img src="images/left-arrow.png" id="prev">
+            <div class="preview">
+                <img src="images/small1.jpg" class="active thumbnail">
+                <img src="images/small2.jpg" class="thumbnail">
+                <img src="images/small3.jpg" class="thumbnail">
+                <img src="images/small4.jpg" class="thumbnail">
+                <img src="images/small5.png" class="thumbnail">
+                </div>
+            <img src="images/right-arrow.png" id="next">
+        </div>
+        
+    </div>
+    
+    <script>
+    var prev = document.getElementById("prev");
+    var next = document.getElementById("next");
+    var thumbnail = document.getElementsByClassName("thumbnail");
+    var hero = document.getElementById("hero");
+        
+    var backgroundImg = new Array(
+        "images/slider1.jpg",
+        "images/slider2.jpg",
+        "images/slider3.jpg",
+        "images/slider4.jpg",
+        "images/slider5.png",
+    );
+    let i = 0;
+    next.onclick = function(){
+        
+        if(i < 4)
+        hero.style.backgroundImage = 'url("'+backgroundImg[i+1]+'")';
+        thumbnail[i+1].classList.add("active");
+        thumbnail[i].classList.remove("active");
+        i++;
+    }
+    
+    prev.onclick = function(){
+        
+        if(i > 0)
+        hero.style.backgroundImage = 'url("'+backgroundImg[i-1]+'")';
+        thumbnail[i-1].classList.add("active");
+        thumbnail[i].classList.remove("active");
+        i--;
+    }
+    
+    
+    </script>
+    
+</body>
+</html>
